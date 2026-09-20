@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>لما ترجعي بخير 🤍</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+
+    font-family:
+        "Tahoma",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #263238,
+            #101820 45%,
+            #050607 100%
+        );
+
+    color:#fff;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars{
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+    pointer-events:none;
+
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    opacity:.5;
+
+    animation:
+        fall linear infinite;
+}
+
+.star:nth-child(1){
+    left:5%;
+    animation-duration:7s;
+    animation-delay:1s;
+}
+
+.star:nth-child(2){
+    left:15%;
+    animation-duration:9s;
+    animation-delay:3s;
+}
+
+.star:nth-child(3){
+    left:28%;
+    animation-duration:6s;
+}
+
+.star:nth-child(4){
+    left:42%;
+    animation-duration:10s;
+    animation-delay:2s;
+}
+
+.star:nth-child(5){
+    left:55%;
+    animation-duration:8s;
+}
+
+.star:nth-child(6){
+    left:68%;
+    animation-duration:7s;
+    animation-delay:4s;
+}
+
+.star:nth-child(7){
+    left:80%;
+    animation-duration:11s;
+}
+
+.star:nth-child(8){
+    left:93%;
+    animation-duration:8s;
+    animation-delay:2s;
+}
+
+@keyframes fall{
+
+    from{
+        transform:
+            translateY(-20px);
+    }
+
+    to{
+        transform:
+            translateY(110vh);
+    }
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #263238 0%,
+            #101820 45%,
+            #050607 100%
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+#intro.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+}
+
+.intro-content{
+
+    width:90%;
+
+    max-width:500px;
+
+    animation:
+        introAppear 1.5s ease;
+}
+
+.intro-heart{
+
+    font-size:70px;
+
+    margin-bottom:25px;
+
+    animation:
+        heartbeat 2s infinite;
+}
+
+.intro-content h1{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+    line-height:1.5;
+}
+
+.intro-content p{
+
+    color:#aaa;
+
+    font-size:17px;
+
+    margin-bottom:35px;
+}
+
+.open-btn{
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    color:#111;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.open-btn:hover{
+
+    transform:
+        scale(1.06);
+}
+
+@keyframes introAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.13);
+    }
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+
+    position:relative;
+
+    z-index:1;
+
+    width:100%;
+
+    opacity:0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+main.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px 20px;
+}
+
+.hero-heart{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+    animation:
+        heartbeat 2s infinite;
+}
+
+.hero h1{
+
+    font-size:
+        clamp(32px,8vw,55px);
+
+    margin-bottom:20px;
+}
+
+.hero p{
+
+    max-width:600px;
+
+    color:#ccc;
+
+    line-height:2;
+
+    font-size:17px;
+}
+
+.scroll{
+
+    margin-top:50px;
+
+    color:#aaa;
+
+    font-size:13px;
+
+    animation:
+        bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            translateY(8px);
+    }
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+
+    width:92%;
+
+    max-width:800px;
+
+    margin:
+        0 auto 80px;
+
+    text-align:center;
+}
+
+.section-title{
+
+    font-size:28px;
+
+    margin-bottom:30px;
+}
+
+.card{
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:30px 22px;
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.25);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-card{
+
+    line-height:2.2;
+
+    font-size:17px;
+
+    color:#eee;
+}
+
+.message-text{
+
+    opacity:0;
+
+    transform:
+        translateY(15px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.message-text.visible{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.action-btn{
+
+    margin-top:25px;
+
+    border:none;
+
+    background:#fff;
+
+    color:#111;
+
+    padding:14px 25px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.action-btn:hover{
+
+    transform:
+        scale(1.04);
+}
+
+
+/* =========================
+   MEMORY GRID
+========================= */
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+}
+
+.memory{
+
+    aspect-ratio:1/1;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #263238,
+            #111
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#aaa;
+
+    font-size:14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.25);
+
+    transition:.35s;
+}
+
+.memory:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.02);
+}
+
+.memory img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* =========================
+   THREE CARDS
+========================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.small-card{
+
+    padding:25px 15px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius:20px;
+}
+
+.small-card .icon{
+
+    font-size:35px;
+
+    margin-bottom:15px;
+}
+
+.small-card h3{
+
+    margin-bottom:10px;
+}
+
+.small-card p{
+
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn{
+
+    position:fixed;
+
+    bottom:20px;
+
+    left:20px;
+
+    z-index:5000;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.9);
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.3);
+
+    transition:.3s;
+}
+
+.music-btn.playing{
+
+    animation:
+        musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse{
+
+    50%{
+        transform:scale(1.1);
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:
+        20px 20px 50px;
+
+    color:#777;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .intro-content h1{
+        font-size:25px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .memory-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .card{
+        padding:25px 18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<div id="intro">
+
+    <div class="intro-content">
+
+        <div class="intro-heart">
+            🤍
+        </div>
+
+        <h1>
+            مش كل الكلام بيتقال...
+        </h1>
+
+        <p>
+            بعضه بيتعمل.
+        </p>
+
+        <button
+            class="open-btn"
+            onclick="openPage()">
+
+            افتحي 🤍
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     STARS
+========================= -->
+
+<div class="stars">
+
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+
+</div>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio
+    id="music"
+    loop
+    preload="auto">
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<button
+    class="music-btn"
+    onclick="toggleMusic()"
+    id="musicButton">
+
+    🎵
+
+</button>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main id="main">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+    <div class="hero-heart">
+        🤍
+    </div>
+
+    <h1>
+        لما ترجعي بخير
+    </h1>
+
+    <p>
+
+        الصفحة دي مش عشان أقول كلام كتير...
+
+        <br>
+
+        هي مجرد حاجة صغيرة عملتها بإيدي
+        عشان أقولك إن أهم حاجة عندي
+        إنك تكوني بخير.
+
+    </p>
+
+    <div class="scroll">
+
+        انزلي براحتك ↓
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+
+        رسالة صغيرة
+
+    </h2>
+
+    <div class="card message-card">
+
+        <div
+            id="messageText"
+            class="message-text">
+
+            أنا مش طالب منك دلوقتي
+            غير إنك تهتمي بنفسك،
+            وتدي لنفسك وقت ترتاح
+            وتستعيد هدوءها.
+
+            <br><br>
+
+            الأيام الصعبة بتعدي،
+            ومش لازم تواجهِي كل حاجة لوحدك.
+
+            <br><br>
+
+            أنا مبسوط إنك بخير،
+            ودي أهم حاجة عندي دلوقتي.
+
+            <br><br>
+
+            خدي وقتك...
+            واهتمي بنفسك...
+            والباقي ييجي واحدة واحدة.
+
+            <br><br>
+
+            <strong>
+                يوم أهدى من اللي فات،
+                بإذن الله. 🤍
+            </strong>
+
+        </div>
+
+
+        <button
+            class="action-btn"
+            onclick="showMessage()">
+
+            افتحي الرسالة
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+
+        ذكريات صغيرة 🤍
+
+    </h2>
+
+
+    <div class="memory-grid">
+
+
+        <div class="memory">
+
+            <img
+                src="memory1.jpeg"
+                alt="ذكرى 1">
+
+        </div>
+
+
+        <div class="memory">
+
+            <img
+                src="memory2.jpeg"
+                alt="ذكرى 2">
+
+        </div>
+
+
+        <div class="memory">
+
+            <img
+                src="memory3.jpeg"
+                alt="ذكرى 3">
+
+        </div>
+
+
+        <div class="memory">
+
+            <img
+                src="memory4.jpeg"
+                alt="ذكرى 4">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     THREE CARDS
+========================= -->
+
+<section>
+
+    <h2 class="section-title">
+
+        خدي وقتك
+
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="small-card">
+
+            <div class="icon">
+                🤍
+            </div>
+
+            <h3>
+                ارتاحي
+            </h3>
+
+            <p>
+
+                مش لازم كل حاجة تتحل
+                في يوم واحد.
+
+            </p>
+
+        </div>
+
+
+        <div class="small-card">
+
+            <div class="icon">
+                🌙
+            </div>
+
+            <h3>
+                خدي وقتك
+            </h3>
+
+            <p>
+
+                مفيش سباق.
+                خطوة صغيرة كل يوم تكفي.
+
+            </p>
+
+        </div>
+
+
+        <div class="small-card">
+
+            <div class="icon">
+                🌷
+            </div>
+
+            <h3>
+                بكرة أهدى
+            </h3>
+
+            <p>
+
+                خلي اليوم يعدي بهدوء،
+                وبكرة نشوفه سوا.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section>
+
+    <div class="card">
+
+        <h2
+            style="margin-bottom:20px;">
+
+            🤍
+
+        </h2>
+
+
+        <p
+            style="
+            line-height:2;
+            color:#ddd;
+            ">
+
+            مش محتاجة تكوني قوية طول الوقت...
+
+            <br>
+
+            المهم متفضليش لوحدك
+            وقت ما تكون الدنيا تقيلة.
+
+            <br><br>
+
+            خدي بالك من نفسك.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    اتعملت بإيد شخص
+    بيتمنى لكِ الخير دائمًا 🤍
+
+</footer>
+
+
+</main>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================
+   OPEN PAGE
+========================= */
+
+const intro =
+    document.getElementById("intro");
+
+const main =
+    document.getElementById("main");
+
+
+const music =
+    document.getElementById("music");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+function openPage(){
+
+    intro.classList.add("hide");
+
+
+    setTimeout(function(){
+
+        main.classList.add("show");
+
+
+        /*
+         * محاولة تشغيل الأغنية
+         * بعد ضغط المستخدم على الزر
+         */
+
+        music.play().then(function(){
+
+            musicButton.innerHTML =
+                "⏸️";
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+        }).catch(function(){
+
+            /*
+             * بعض المتصفحات قد تمنع التشغيل
+             * ويتم تشغيلها من زر الموسيقى.
+             */
+
+        });
+
+
+    },500);
+
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+function showMessage(){
+
+    const message =
+        document.getElementById(
+            "messageText"
+        );
+
+    message.classList.add(
+        "visible"
+    );
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function toggleMusic(){
+
+
+    if(music.paused){
+
+        music.play().then(function(){
+
+            musicButton.innerHTML =
+                "⏸️";
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+        }).catch(function(){
+
+            alert(
+                "تأكدي أن ملف music.mp3 موجود بجانب index.html"
+            );
+
+        });
+
+    }
+
+
+    else{
+
+        music.pause();
+
+        musicButton.innerHTML =
+            "🎵";
+
+        musicButton.classList.remove(
+            "playing"
+        );
+
+    }
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
